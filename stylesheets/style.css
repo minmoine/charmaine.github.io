@@ -1,102 +1,432 @@
-body {
-    font-family: Georgia, serif;
-    background: #020510;
-    color: #c8c3e6;
-    overflow-x: hidden;
+* {
+  cursor: none !important;
 }
+
+body {
+  font-family: Georgia, serif;
+  background: black;
+  color: #c8c3e6;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Cursor */
+
+.cursor,
+.trail {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/star_cursor.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.trail {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid #b48cff80;
+  box-shadow: 0 0 8px #8c50ff4d;
+}
+
+/* Home Page Video Background */
 
 .video-bg {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
+/* Home Page Styling */
+
 header {
-    position: relative;
-    z-index: 1;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  padding-top: 52px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
 header h1 {
-    font-size: clamp(2rem, 6vw, 5rem);
-    font-weight: 300;
-    letter-spacing: 0.25em;
-    color: #dcd7ffeb;
-    text-transform: uppercase;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  color: #dcd7ffeb;
+  text-transform: uppercase;
+  transition:
+    text-shadow 0.4s ease,
+    color 0.4s ease;
+  will-change: text-shadow;
+  transform: translateZ(0);
+}
+
+header h1:hover {
+  color: #fff;
+  text-shadow:
+    0 0 12px #b4a0ffe6,
+    0 0 28px #8c50ff80;
 }
 
 main {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
+/* Navigation Bar */
 .navbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 52px;
-    padding: 0 2rem;
-    background: rgba(2, 5, 16, 0.45);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #ffffff0d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 2rem;
+  background: #02051073;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #ffffff0d;
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-    display: block;
-    padding: 0.35rem 1.1rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    color: #c8c3e6;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: color 0.2s, background 0.2s;
+  display: block;
+  padding: 0.35rem 1.1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: #c8c3e6;
+  text-decoration: none;
+  border-radius: 4px;
+  transition:
+    color 0.2s,
+    background 0.2s;
 }
 
 .nav-links a:hover {
-    color: #fff;
-    background: #ffffff1a;
+  color: #fff;
+  background: #ffffff1a;
 }
 
-.galaxy-overview {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 4rem 2rem;
-    background: #020510d9;
-    border-top: 1px solid #ffffff0d;
+/* Welcome Overview Section */
+.welcome-overview {
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 12rem 6rem;
+  background: #020510d9;
+  border-top: 1px solid #ffffff0d;
+  position: relative;
 }
 
-.galaxy-overview h2 {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    margin-bottom: 2px;
-    color: #dcd7ffeb;
+.welcome-overview::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, #020510);
+  pointer-events: none;
 }
 
-.galaxy-overview p {
-    font-size: 1.25rem;
-    letter-spacing: 0.15em;
-    color: #c8c3e6;
-    max-width: 500px;
+.welcome-overview h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  margin-bottom: 2px;
+  color: #dcd7ffeb;
+}
+
+.welcome-overview p {
+  font-size: 1.25rem;
+  letter-spacing: 0.15em;
+  max-width: 500px;
+}
+
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+  padding-top: 3rem;
+}
+
+/* Milky Way Image */
+.milkyway-image {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid #7c5cfc40;
+  border-radius: 4px;
+  box-shadow: 0 0 12px #7c5cfc30;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.milkyway-image:hover {
+  transform: scale(1.03);
+  border-color: #b48cff;
+  box-shadow:
+    0 0 24px #7c5cfc80,
+    0 0 48px #7c5cfc30;
+}
+
+/* Explore Button */
+.explore-btn {
+  margin-top: 1rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.4rem;
+  width: fit-content;
+  font-family: Georgia, serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #dcd7ff;
+  background: transparent;
+  border: 1px solid #7c5cfc80;
+  border-radius: 2px;
+  cursor: none;
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.explore-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #3a1f8000, #6c3fff33, #3a1f8000);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.explore-btn::after {
+  content: "→";
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  transition: transform 0.3s ease;
+}
+
+.explore-btn:hover {
+  color: #fff;
+  border-color: #b48cff;
+}
+
+.explore-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.explore-btn:hover::after {
+  transform: translateX(4px);
+}
+
+/* Planets Overview Section */
+.planets-overview {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20rem 4rem 8rem;
+  background: linear-gradient(to bottom, #020510, black 40%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.planets-row-area {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.planets-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.planet {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+.planet img {
+  display: block;
+  height: auto;
+  transition: filter 0.4s ease;
+}
+
+/* Per-planet glow colors */
+.planet[data-planet="mercury"] {
+  --glow: #c8c2b6;
+  --glow-soft: #c8c2b680;
+}
+.planet[data-planet="venus"] {
+  --glow: #f0c878;
+  --glow-soft: #f0c87880;
+}
+.planet[data-planet="earth"] {
+  --glow: #6db5e8;
+  --glow-soft: #6db5e880;
+}
+.planet[data-planet="mars"] {
+  --glow: #e07b4a;
+  --glow-soft: #e07b4a80;
+}
+.planet[data-planet="jupiter"] {
+  --glow: #e0b07a;
+  --glow-soft: #e0b07a80;
+}
+.planet[data-planet="saturn"] {
+  --glow: #f0d8a8;
+  --glow-soft: #f0d8a880;
+}
+.planet[data-planet="uranus"] {
+  --glow: #a8e0e8;
+  --glow-soft: #a8e0e880;
+}
+.planet[data-planet="neptune"] {
+  --glow: #6b8fe8;
+  --glow-soft: #6b8fe880;
+}
+
+.planet:hover {
+  transform: scale(1.2);
+}
+
+.planet:hover img {
+  filter: drop-shadow(0 0 16px var(--glow));
+}
+
+.planet.active {
+  transform: scale(1.35);
+}
+
+.planet.active img {
+  filter: drop-shadow(0 0 22px var(--glow)) drop-shadow(0 0 40px var(--glow-soft));
+}
+
+.planet-info {
+  width: 100%;
+  max-width: 640px;
+  min-height: 220px;
+  text-align: center;
+}
+
+.planet-info h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #dcd7ffeb;
+  margin: 0 0 1rem 0;
+  transition: color 0.3s ease;
+}
+
+.planet-info p {
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.sun-image {
+  position: absolute;
+  left: -500px;
+  top: 50%;
+  width: 640px;
+  height: auto;
+  transform: translateY(-50%);
+  filter: drop-shadow(0 0 40px #fb8b0b66) drop-shadow(0 0 80px #fb8b0b33);
+  animation: sun-float 8s ease-in-out infinite, sun-glow 4s ease-in-out infinite;
+  pointer-events: none;
+  will-change: transform, filter;
+}
+
+@keyframes sun-float {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-53%) translateX(25px);
+  }
+}
+
+@keyframes sun-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 40px #fb8b0b66) drop-shadow(0 0 80px #fb8b0b33);
+  }
+  50% {
+    filter: drop-shadow(0 0 60px #fb8b0b99) drop-shadow(0 0 120px #fb8b0b4d);
+  }
+}
+
+
+/* Footer */
+footer {
+  position: relative;
+  z-index: 1;
+  background: black;
+  padding: 2rem 6rem;
+}
+
+.footer-content h1,
+.footer-content p {
+  margin: 0;
+}
+
+.footer-content h1 {
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: #dcd7ffeb;
+  margin-bottom: 0.5rem;
 }

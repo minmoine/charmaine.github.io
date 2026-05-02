@@ -5,34 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Planetarium</title>
     <link rel="stylesheet" href="stylesheets/style.css">
-    <script src="scripts/script.js"></script>
 </head>
 <body>
-    <video autoplay muted loop class="video-bg">
-        <source src="assets/stars.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="trail" id="trail"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="pages/planets.html">PLANETS</a></li>
+            <li><a href="pages/about.html">ABOUT</a></li>
+            <li><a href="pages/contact.html">CONTACT US</a></li>
+        </ul>
+    </nav>
 
-    <!-- Header and Navigation Bar -->
+    <!-- Header -->
     <header>
+        <!-- Looping Video Header -->
+        <video autoplay muted loop class="video-bg">
+            <source src="assets/stars.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <h1>BIG PLANETARIUM</h1>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="pages/planets.html">PLANETS</a></li>
-                <li><a href="pages/about.html">ABOUT</a></li>
-                <li><a href="pages/contact.html">CONTACT US</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <!-- Milky Way Overview -->
+    <!-- Main Content -->
     <main>
-        <section class="galaxy-overview">
-            <h2>Explore our Galaxy</h2>
-            <p>Welcome to the Big Planetarium! Discover the wonders of the Milky Way and learn about the planets that live in it.</p>
+        <!-- Milky Way Overview -->
+        <section class="welcome-overview">
+            <div class="welcome-text">
+                <h2>Explore our Galaxy</h2>
+                <p>Welcome to the Big Planetarium! Discover the wonders of the Milky Way and learn about the planets in our solar system.</p>
+                <a href="pages/planets.html" class="explore-btn">Explore Now</a>
+            </div>
+            <img src="assets/milky_way.png" alt="Milky Way Galaxy" class="milkyway-image">
+        </section>
+
+        <!-- Planets Overview -->
+        <section class="planets-overview">
+            <div class="planets-row-area">
+                <img src="assets/sun.svg" alt="Sun" class="sun-image">
+                <div class="planets-row">
+                <button class="planet" data-planet="mercury" data-name="Mercury" data-desc="The smallest planet in our solar system and closest to the Sun. Mercury has no moons and barely any atmosphere, leading to extreme temperature swings between day and night.">
+                    <img src="assets/planets imgs/1-mercury.png" alt="Mercury" style="width: 50px;">
+                </button>
+                <button class="planet" data-planet="venus" data-name="Venus" data-desc="Often called Earth's twin due to its similar size, Venus is the hottest planet thanks to a thick CO₂ atmosphere that traps heat. A day on Venus is longer than its year.">
+                    <img src="assets/planets imgs/2-venus.png" alt="Venus" style="width: 95px;">
+                </button>
+                <button class="planet" data-planet="earth" data-name="Earth" data-desc="The only known planet to harbor life. Earth's surface is 71% water, and its atmosphere of nitrogen and oxygen protects us from harmful solar radiation.">
+                    <img src="assets/planets imgs/3-earth.png" alt="Earth" style="width: 102px;">
+                </button>
+                <button class="planet" data-planet="mars" data-name="Mars" data-desc="The Red Planet, named for the iron oxide that gives it a rusty hue. Mars has the largest volcano in the solar system, Olympus Mons, and shows evidence of ancient water.">
+                    <img src="assets/planets imgs/4-mars.png" alt="Mars" style="width: 62px;">
+                </button>
+                <button class="planet" data-planet="jupiter" data-name="Jupiter" data-desc="The largest planet in our solar system — a gas giant with a Great Red Spot storm that has raged for centuries. Jupiter has at least 95 moons.">
+                    <img src="assets/planets imgs/5-jupiter.png" alt="Jupiter" style="width: 250px;">
+                </button>
+                <button class="planet" data-planet="saturn" data-name="Saturn" data-desc="Famous for its stunning ring system made of ice and rock. Saturn is a gas giant so light it would float in water, if you could find a bathtub big enough.">
+                    <img src="assets/planets imgs/6-saturn.png" alt="Saturn" style="width: 232px;">
+                </button>
+                <button class="planet" data-planet="uranus" data-name="Uranus" data-desc="An ice giant tilted on its side, rotating nearly perpendicular to its orbit. Methane in its atmosphere gives Uranus its distinctive pale blue-green color.">
+                    <img src="assets/planets imgs/7-uranus.png" alt="Uranus" style="width: 138px;">
+                </button>
+                <button class="planet" data-planet="neptune" data-name="Neptune" data-desc="The farthest planet from the Sun and the windiest, with supersonic storms tearing across its surface. Neptune was the first planet predicted by mathematics before being seen.">
+                    <img src="assets/planets imgs/8-neptune.png" alt="Neptune" style="width: 132px;">
+                </button>
+                </div>
+            </div>
+
+            <div class="planet-info">
+                <h3 id="planetName">Our Solar System</h3>
+                <p id="planetDesc">There are over 100 billion planets in the Milky Way galaxy. Our solar system only has 8 planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune. Hover over a planet to learn more.</p>
+            </div>
         </section>
     </main>
 
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h1>Big Planetarium</h1>
+            <p>&copy; 2026 Big Planetarium. All rights reserved.</p>
+        </div>
+        <div>
+            
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
 </body>
 </html>
