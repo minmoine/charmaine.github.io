@@ -4,8 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planets</title>
+    <link rel="stylesheet" href="../stylesheets/planets.css">
 </head>
 <body>
+    <!-- Full-page Video Background -->
+    <video autoplay muted loop class="video-bg-fixed">
+        <source src="../assets/planets.mp4" type="video/mp4">
+    </video>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="trail" id="trail"></div>
     
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="../pages/planets.html">PLANETS</a></li>
+            <li><a href="../pages/about.html">ABOUT</a></li>
+            <li><a href="../pages/contact.html">CONTACT US</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="planets-header">
+        <!-- Sun -->
+        <img src="../assets/planets_imgs/sun.svg" alt="Sun" class="sun-image">
+
+        <div class="planets-content">
+            <!-- Title and Description-->
+            <h1 class="planets-title">The Planets</h1>
+            <img src="../assets/border.png" alt="Border Image" class="planets-border">
+            <p class="planets-description">
+                Journey through the vast expanse of our solar system. From the scorched surface of Mercury 
+                to the icy rings of Saturn, discover the wonders that orbit our sun and the mysteries 
+                that still await beyond the edge of our known world.
+            </p>
+            <a href="#planet-overview" class="explore-btn" id="explore-btn">
+                <span class="explore-btn-text">Explore the Solar System</span>
+                <span class="explore-btn-arrow">↓</span>
+            </a>
+        </div>
+
+        <!-- Mercury -->
+        <a href="mercury.html" class="mercury-link">
+            <span class="mercury-link-name">Mercury</span>
+            <img src="../assets/planets_imgs/mercury.svg" alt="Mercury" class="mercury-image">
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Planet Decription -->
+        <section class="planet-overview" id="planet-overview">
+            <div class="planet-overview-image-wrap">
+                <img src="../assets/solar_system.png" alt="Solar System Landscape" class="planet-overview-image">
+                <div class="planet-overview-image-overlay"></div>
+            </div>
+            <div class="planet-overview-content">
+                <span class="planet-overview-label">Our Solar System</span>
+                <h2 class="planet-overview-title">Eight Worlds,<br>One Star</h2>
+                <p class="planet-overview-text">
+                    Our solar system is home to eight remarkable planets, each with its own story written 
+                    in rock, gas, and ice. The rocky inner worlds — Mercury, Venus, Earth, and Mars — 
+                    forged close to the sun's heat. Beyond the asteroid belt, the gas giants Jupiter and 
+                    Saturn reign supreme, their gravity shaping the fate of everything around them.
+                </p>
+                <p class="planet-overview-text">
+                    Further still, the ice giants Uranus and Neptune drift in the cold outer dark, ringed 
+                    by moons that harbour secrets we are only beginning to understand. Every planet is a 
+                    world unto itself — waiting to be explored.
+                </p>
+                <div class="planet-overview-stats">
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Planets</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">290+</span>
+                        <span class="stat-label">Known Moons</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number">4.6B</span>
+                        <span class="stat-label">Years Old</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="newsletter">
+            <!-- Looping Background-->
+            <video autoplay muted loop class="newsletter-bg-fixed">
+                <source src="../assets/glowing_stars.mp4" type="video/mp4">
+            </video>
+
+            <!-- Newsletter Content -->
+            <h2>Join Our Newsletter</h2>
+            <p>Be sent the latest updates and news about our solar system!</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <section class="footer-content">
+            <div class="footer-brand">
+                <img src="../assets/logo.png" alt="Big Planetarium Logo" class="footer-logo">
+                <div class="footer-text">
+                    <h1>Big Planetarium</h1>
+                    <p>&copy; 2026 Big Planetarium. All rights reserved.</p>
+                </div>
+            </div>
+            <div class="footer-group"> 
+                <div class="footer-links">
+                    <h1>Quick Links</h1>
+                    <a href="index.html">Home</a>
+                    <a href="pages/planets.html">Planets</a>
+                    <a href="pages/about.html">About</a>
+                    <a href="pages/contact.html">Contact Us</a>
+                </div>
+                <div class="footer-links">
+                    <h1>Social Media</h1>
+                    <a href="index.html">Facebook</a>
+                    <a href="index.html">Instagram</a>
+                    <a href="index.html">Tiktok</a>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script src="../scripts/planets.js"></script>
 </body>
 </html>

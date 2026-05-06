@@ -13,8 +13,7 @@ body {
 
 /* Custom Cursor */
 
-.cursor,
-.trail {
+.cursor, .trail {
   position: fixed;
   border-radius: 50%;
   pointer-events: none;
@@ -38,10 +37,10 @@ body {
   box-shadow: 0 0 8px #8c50ff4d;
 }
 
-/* Home Page Video Background */
+/* Full-page Fixed Video Background */
 
-.video-bg {
-  position: absolute;
+.video-bg-fixed {
+  position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
@@ -61,7 +60,6 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
 }
 
 header h1 {
@@ -70,18 +68,14 @@ header h1 {
   letter-spacing: 0.25em;
   color: #dcd7ffeb;
   text-transform: uppercase;
-  transition:
-    text-shadow 0.4s ease,
-    color 0.4s ease;
+  transition: text-shadow 0.4s ease, color 0.4s ease;
   will-change: text-shadow;
   transform: translateZ(0);
 }
 
 header h1:hover {
   color: #fff;
-  text-shadow:
-    0 0 12px #b4a0ffe6,
-    0 0 28px #8c50ff80;
+  text-shadow: 0 0 12px #b4a0ffe6, 0 0 28px #8c50ff80;
 }
 
 main {
@@ -90,6 +84,7 @@ main {
 }
 
 /* Navigation Bar */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -121,9 +116,7 @@ main {
   color: #c8c3e6;
   text-decoration: none;
   border-radius: 4px;
-  transition:
-    color 0.2s,
-    background 0.2s;
+  transition: color 0.2s, background 0.2s;
 }
 
 .nav-links a:hover {
@@ -132,6 +125,7 @@ main {
 }
 
 /* Welcome Overview Section */
+
 .welcome-overview {
   min-height: 100vh;
   box-sizing: border-box;
@@ -179,6 +173,7 @@ main {
 }
 
 /* Milky Way Image */
+
 .milkyway-image {
   flex: 1 1 0;
   min-width: 0;
@@ -188,21 +183,17 @@ main {
   border: 1px solid #7c5cfc40;
   border-radius: 4px;
   box-shadow: 0 0 12px #7c5cfc30;
-  transition:
-    transform 0.4s ease,
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .milkyway-image:hover {
   transform: scale(1.03);
   border-color: #b48cff;
-  box-shadow:
-    0 0 24px #7c5cfc80,
-    0 0 48px #7c5cfc30;
+  box-shadow: 0 0 24px #7c5cfc80, 0 0 48px #7c5cfc30;
 }
 
 /* Explore Button */
+
 .explore-btn {
   margin-top: 1rem;
   position: relative;
@@ -222,9 +213,7 @@ main {
   cursor: none;
   overflow: hidden;
   text-decoration: none;
-  transition:
-    color 0.3s ease,
-    border-color 0.3s ease;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .explore-btn::before {
@@ -257,10 +246,11 @@ main {
 }
 
 /* Planets Overview Section */
+
 .planets-overview {
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 20rem 4rem 8rem;
+  padding: 15rem 4rem 8rem;
   background: linear-gradient(to bottom, #020510, black 40%);
   position: relative;
   overflow: hidden;
@@ -269,6 +259,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 5rem;
+  border-bottom: 1px solid #ffffff0d;
 }
 
 .planets-row-area {
@@ -282,8 +273,10 @@ main {
 .planets-row {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 2rem;
 }
+
+/* Planets */
 
 .planet {
   background: transparent;
@@ -293,9 +286,7 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition:
-    transform 0.4s ease,
-    filter 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .planet img {
@@ -305,38 +296,15 @@ main {
 }
 
 /* Per-planet glow colors */
-.planet[data-planet="mercury"] {
-  --glow: #c8c2b6;
-  --glow-soft: #c8c2b680;
-}
-.planet[data-planet="venus"] {
-  --glow: #f0c878;
-  --glow-soft: #f0c87880;
-}
-.planet[data-planet="earth"] {
-  --glow: #6db5e8;
-  --glow-soft: #6db5e880;
-}
-.planet[data-planet="mars"] {
-  --glow: #e07b4a;
-  --glow-soft: #e07b4a80;
-}
-.planet[data-planet="jupiter"] {
-  --glow: #e0b07a;
-  --glow-soft: #e0b07a80;
-}
-.planet[data-planet="saturn"] {
-  --glow: #f0d8a8;
-  --glow-soft: #f0d8a880;
-}
-.planet[data-planet="uranus"] {
-  --glow: #a8e0e8;
-  --glow-soft: #a8e0e880;
-}
-.planet[data-planet="neptune"] {
-  --glow: #6b8fe8;
-  --glow-soft: #6b8fe880;
-}
+
+.planet[data-planet="mercury"] { --glow: #c8c2b6; --glow-soft: #c8c2b680; }
+.planet[data-planet="venus"]   { --glow: #f0c878; --glow-soft: #f0c87880; }
+.planet[data-planet="earth"]   { --glow: #6db5e8; --glow-soft: #6db5e880; }
+.planet[data-planet="mars"]    { --glow: #e07b4a; --glow-soft: #e07b4a80; }
+.planet[data-planet="jupiter"] { --glow: #e0b07a; --glow-soft: #e0b07a80; }
+.planet[data-planet="saturn"]  { --glow: #f0d8a8; --glow-soft: #f0d8a880; }
+.planet[data-planet="uranus"]  { --glow: #a8e0e8; --glow-soft: #a8e0e880; }
+.planet[data-planet="neptune"] { --glow: #6b8fe8; --glow-soft: #6b8fe880; }
 
 .planet:hover {
   transform: scale(1.2);
@@ -344,14 +312,6 @@ main {
 
 .planet:hover img {
   filter: drop-shadow(0 0 16px var(--glow));
-}
-
-.planet.active {
-  transform: scale(1.35);
-}
-
-.planet.active img {
-  filter: drop-shadow(0 0 22px var(--glow)) drop-shadow(0 0 40px var(--glow-soft));
 }
 
 .planet-info {
@@ -378,14 +338,16 @@ main {
   margin: 0;
 }
 
+/* Animated Sun Image */
+
 .sun-image {
   position: absolute;
   left: -500px;
   top: 50%;
-  width: 640px;
+  width: 600px;
   height: auto;
   transform: translateY(-50%);
-  filter: drop-shadow(0 0 40px #fb8b0b66) drop-shadow(0 0 80px #fb8b0b33);
+  filter: drop-shadow(0 0 20px #fb8b0b66) drop-shadow(0 0 60px #fb8b0b33);
   animation: sun-float 8s ease-in-out infinite, sun-glow 4s ease-in-out infinite;
   pointer-events: none;
   will-change: transform, filter;
@@ -394,39 +356,186 @@ main {
 @keyframes sun-float {
   0%, 100% {
     transform: translateY(-50%) translateX(0);
-  }
+    }
   50% {
-    transform: translateY(-53%) translateX(25px);
-  }
+    transform: translateY(-53%) translateX(20px);
+    }
 }
 
 @keyframes sun-glow {
   0%, 100% {
-    filter: drop-shadow(0 0 40px #fb8b0b66) drop-shadow(0 0 80px #fb8b0b33);
-  }
+    filter: drop-shadow(0 0 20px #fb8b0b66) drop-shadow(0 0 40px #fb8b0b33);
+    }
   50% {
-    filter: drop-shadow(0 0 60px #fb8b0b99) drop-shadow(0 0 120px #fb8b0b4d);
-  }
+    filter: drop-shadow(0 0 40px #fb8b0b99) drop-shadow(0 0 45px #fb8b0b4d);
+    }
 }
 
+/* Newsletter Section */
+
+.newsletter {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  border-top: 1px solid #ffffff0d;
+}
+
+.newsletter-bg-fixed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.newsletter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #02051099;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.newsletter h2, .newsletter p, .newsletter form {
+  position: relative;
+  z-index: 2;
+}
+
+.newsletter h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #dcd7ffeb;
+  margin: 0;
+}
+
+.newsletter p {
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.newsletter form {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.newsletter input[type="email"] {
+  background: #ffffff0d;
+  border: 1px solid #7c5cfc80;
+  border-radius: 2px;
+  color: #dcd7ff;
+  font-family: Georgia, serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 1.2rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 260px;
+}
+
+.newsletter input[type="email"]::placeholder {
+  color: #c8c3e670;
+}
+
+.newsletter input[type="email"]:focus {
+  border-color: #b48cff;
+}
+
+.newsletter button[type="submit"] {
+  font-family: Georgia, serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #dcd7ff;
+  background: transparent;
+  border: 1px solid #7c5cfc80;
+  border-radius: 2px;
+  padding: 0.5rem 1.4rem;
+  cursor: none;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.newsletter button[type="submit"]:hover {
+  color: #fff;
+  border-color: #b48cff;
+  background: #6c3fff22;
+}
 
 /* Footer */
+
 footer {
   position: relative;
   z-index: 1;
   background: black;
-  padding: 2rem 6rem;
+  padding: 6rem 6rem;
 }
 
-.footer-content h1,
-.footer-content p {
+.footer-content {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 18rem;
+}
+
+.footer-group {
+  display: flex;
+  gap: 10rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  width: 90px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.footer-text h1 {
+  font-size: 1.25rem;
+  font-weight: 500px;
+  letter-spacing: 0.15em;
+  color: #dcd7ffeb;
+  margin: 0 0 0.5rem 0;
+}
+
+.footer-text p {
   margin: 0;
 }
 
-.footer-content h1 {
-  font-size: 1.25rem;
-  font-weight: 300;
-  letter-spacing: 0.15em;
-  color: #dcd7ffeb;
-  margin-bottom: 0.5rem;
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links h1 {
+    font-size: 1.5rem;
+}
+
+.footer-links a {
+  letter-spacing: 0.14em;
+  color: #c8c3e6;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #fff;
 }

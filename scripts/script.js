@@ -71,6 +71,10 @@ if (planetButtons.length && planetName && planetDesc) {
         btn.addEventListener('mouseenter', () => showPlanet(btn));
         btn.addEventListener('mouseleave', resetPlanet);
         btn.addEventListener('click', () => {
+            if (btn.dataset.planet === 'mercury') {
+                window.location.href = 'pages/mercury.html';
+                return;
+            }
             const wasActive = btn.classList.contains('active');
             planetButtons.forEach(b => b.classList.remove('active'));
             if (!wasActive) {
