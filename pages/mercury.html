@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earth</title>
-    <link rel="stylesheet" href="../stylesheets/earth_page.css">
+    <title>Mercury</title>
+    <link rel="stylesheet" href="../stylesheets/mercury.css">
 </head>
 <body>
+    <!-- Full-page Background -->
+    <img src="../assets/star_static.png" alt="" class="bg-fixed">
+
+    <div id="pageContent">
+
     <!-- Custom Cursor -->
     <div class="cursor" id="cursor"></div>
     <div class="trail" id="trail"></div>
@@ -14,28 +19,131 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="pages/planets.html">PLANETS</a></li>
-            <li><a href="pages/about.html">ABOUT</a></li>
-            <li><a href="pages/contact.html">CONTACT US</a></li>
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="../pages/planets.html">PLANETS</a></li>
+            <li><a href="../index.html">ABOUT</a></li>
+            <li><a href="../index.html">CONTACT US</a></li>
         </ul>
     </nav>
 
     <!-- Header -->
-    <header>
-        <h1>BIG PLANETARIUM</h1>
+    <header class="planet-slide-header">
+        <!-- Left: Back to Planets -->
+        <a href="../pages/planets.html" class="slide-prev" id="slidePrev">
+            <span class="slide-prev-name">← Planets</span>
+        </a>
+
+        <!-- Center: Mercury -->
+        <div class="slide-center" id="slideCenter">
+            <div class="slide-planet-text">
+                <span class="slide-label">01 — First Planet</span>
+                <h1 class="slide-title">Mercury</h1>
+            </div>
+            <img src="../assets/planets_imgs/mercury.svg" alt="Mercury" class="slide-planet-img" id="slidePlanet">
+            <p class="slide-desc">
+                The smallest planet in our solar system and the closest to the Sun — a scorched world of extreme temperatures and ancient craters.
+            </p>
+        </div>
+
+        <!-- Right: Venus peeking -->
+        <a href="venus.html" class="slide-next" id="slideNext">
+            <span class="slide-next-name">Venus →</span>
+            <img src="../assets/planets_imgs/venus.svg" alt="Venus" class="slide-next-img">
+        </a>
     </header>
 
-    <!-- Main Content -->
+    <!-- Black Scroll Section -->
     <main>
+        <div class="mercury-scroll-wrapper" id="mercuryScrollWrapper">
+            <div class="mercury-scroll-sticky" id="mercuryScrollSticky">
 
+                <!-- Title -->
+                <div class="mercury-scroll-title" id="mercuryScrollTitle">
+                    <h2 class="mercury-scroll-heading">Facts About Mercury</h2>
+                </div>
+
+                <!-- Facts Row -->
+                <div class="mercury-scroll-facts-row">
+
+                    <!-- Facts Left -->
+                    <div class="mercury-facts-left" id="mercuryFactsLeft">
+                        <div class="mercury-fact">
+                            <span class="mercury-fact-label">Distance from Sun</span>
+                            <span class="mercury-fact-value">57.9M km</span>
+                            <p class="mercury-fact-desc">
+                                Mercury orbits closer to the Sun than any other planet, completing a full orbit every 88 Earth days.
+                            </p>
+                        </div>
+                        <div class="mercury-fact">
+                            <span class="mercury-fact-label">Surface Temperature</span>
+                            <span class="mercury-fact-value">−180° to 430°C</span>
+                            <p class="mercury-fact-desc">
+                                Without an atmosphere to retain heat, temperatures swing more than 600 degrees between night and day.
+                            </p>
+                        </div>
+                        <div class="mercury-fact">
+                            <span class="mercury-fact-label">Moons</span>
+                            <span class="mercury-fact-value">0</span>
+                            <p class="mercury-fact-desc">
+                                Mercury has no moons — its weak gravity and proximity to the Sun make capturing satellites nearly impossible.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Planet -->
+                    <img src="../assets/planets_imgs/mercury.svg" alt="Mercury" class="mercury-scroll-planet" id="mercuryScrollPlanet">
+
+                    <!-- Facts Right -->
+                    <div class="mercury-facts-right" id="mercuryFactsRight">
+                        <div class="mercury-fact">
+                            <span class="mercury-fact-label">Diameter</span>
+                            <span class="mercury-fact-value">4,879 km</span>
+                            <p class="mercury-fact-desc">
+                                The smallest planet in the solar system — only slightly larger than Earth's Moon.
+                            </p>
+                        </div>
+                        <div class="mercury-fact">
+                            <span class="mercury-fact-label">Day Length</span>
+                            <span class="mercury-fact-value">59 Earth Days</span>
+                            <p class="mercury-fact-desc">
+                                A single day on Mercury lasts longer than its entire year, rotating extremely slowly on its axis.
+                            </p>
+                        </div>
+                        <div class="mercury-fact">
+                            <span class="mercury-fact-label">Gravity</span>
+                            <span class="mercury-fact-value">3.7 m/s²</span>
+                            <p class="mercury-fact-desc">
+                                Mercury's gravity is just 38% of Earth's — you would weigh less than half as much standing on its surface.
+                            </p>
+                        </div>
+                    </div>
+
+                </div><!-- end facts row -->
+            </div><!-- end sticky -->
+        </div><!-- end wrapper -->
     </main>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <!-- Looping Background-->
+        <video autoplay muted loop class="newsletter-bg-fixed">
+            <source src="../assets/starry_soup.mp4" type="video/mp4">
+        </video>
+
+        <!-- Newsletter Content -->
+        <h2>Join Our Newsletter</h2>
+        <p>Be sent the latest updates and news about our solar system!</p>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
 
     <!-- Footer -->
     <footer>
         <section class="footer-content">
             <div class="footer-brand">
-                <img src="assets/logo.png" alt="Big Planetarium Logo" class="footer-logo">
+                <img src="../assets/logo.png" alt="Big Planetarium Logo" class="footer-logo">
                 <div class="footer-text">
                     <h1>Big Planetarium</h1>
                     <p>&copy; 2026 Big Planetarium. All rights reserved.</p>
@@ -44,21 +152,22 @@
             <div class="footer-group"> 
                 <div class="footer-links">
                     <h1>Quick Links</h1>
-                    <a href="index.html">Home</a>
-                    <a href="pages/planets.html">Planets</a>
-                    <a href="pages/about.html">About</a>
-                    <a href="pages/contact.html">Contact Us</a>
+                    <a href="../index.html">Home</a>
+                    <a href="../pages/planets.html">Planets</a>
+                    <a href="../pages/about.html">About</a>
+                    <a href="../pages/contact.html">Contact Us</a>
                 </div>
                 <div class="footer-links">
                     <h1>Social Media</h1>
-                    <a href="index.html">Facebook</a>
-                    <a href="index.html">Instagram</a>
-                    <a href="index.html">Tiktok</a>
+                    <a href="../index.html">Facebook</a>
+                    <a href="../index.html">Instagram</a>
+                    <a href="../index.html">Tiktok</a>
                 </div>
             </div>
         </section>
     </footer>
 
-    <script src="../scripts/earth_page.js"></script>
+    <script src="../scripts/mercury.js"></script>
+    </div>
 </body>
 </html>

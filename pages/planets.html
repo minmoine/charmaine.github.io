@@ -12,6 +12,8 @@
         <source src="../assets/planets.mp4" type="video/mp4">
     </video>
 
+    <div id="pageContent">
+        
     <!-- Custom Cursor -->
     <div class="cursor" id="cursor"></div>
     <div class="trail" id="trail"></div>
@@ -21,8 +23,8 @@
         <ul class="nav-links">
             <li><a href="../index.html">HOME</a></li>
             <li><a href="../pages/planets.html">PLANETS</a></li>
-            <li><a href="../pages/about.html">ABOUT</a></li>
-            <li><a href="../pages/contact.html">CONTACT US</a></li>
+            <li><a href="../index.html">ABOUT</a></li>
+            <li><a href="../index.html">CONTACT US</a></li>
         </ul>
     </nav>
 
@@ -36,9 +38,8 @@
             <h1 class="planets-title">The Planets</h1>
             <img src="../assets/border.png" alt="Border Image" class="planets-border">
             <p class="planets-description">
-                Journey through the vast expanse of our solar system. From the scorched surface of Mercury 
-                to the icy rings of Saturn, discover the wonders that orbit our sun and the mysteries 
-                that still await beyond the edge of our known world.
+                Travel the great distance of our Solar System and the mysteries that lie beyond the edge of our known world.
+                From the scorched surface of Mercury to the icy rings of Saturn; explore the wonders that orbit our sun.
             </p>
             <a href="#planet-overview" class="explore-btn" id="explore-btn">
                 <span class="explore-btn-text">Explore the Solar System</span>
@@ -47,9 +48,9 @@
         </div>
 
         <!-- Mercury -->
-        <a href="mercury.html" class="mercury-link">
-            <span class="mercury-link-name">Mercury</span>
-            <img src="../assets/planets_imgs/mercury.svg" alt="Mercury" class="mercury-image">
+        <a class="mercury-link" id="mercuryLink" href="mercury.html">
+            <span class="mercury-link-name" id="mercuryName">Mercury →</span>
+            <img src="../assets/planets_imgs/mercury.svg" alt="Mercury" class="mercury-image" id="mercuryImg">
         </a>
     </header>
 
@@ -65,15 +66,13 @@
                 <span class="planet-overview-label">Our Solar System</span>
                 <h2 class="planet-overview-title">Eight Worlds,<br>One Star</h2>
                 <p class="planet-overview-text">
-                    Our solar system is home to eight remarkable planets, each with its own story written 
-                    in rock, gas, and ice. The rocky inner worlds — Mercury, Venus, Earth, and Mars — 
-                    forged close to the sun's heat. Beyond the asteroid belt, the gas giants Jupiter and 
-                    Saturn reign supreme, their gravity shaping the fate of everything around them.
+                    There are eight planets in our solar system that have all fascinating stories all written on rock, gas, and ice.
+                    Mercury, Venus, Earth and Mars are the rocky inner worlds that were formed close to the heat of the sun.
+                    Outside the asteroid belt, the gas giants Jupiter and Saturn dominate with gravity ruling over all that is in their orbit.
                 </p>
                 <p class="planet-overview-text">
-                    Further still, the ice giants Uranus and Neptune drift in the cold outer dark, ringed 
-                    by moons that harbour secrets we are only beginning to understand. Every planet is a 
-                    world unto itself — waiting to be explored.
+                    Even farther away, the frigid outer worlds of Uranus and Neptune wander through the night, with their moons holding secrets to be unlocked.
+                    Each planet is a world in itself – waiting to be discovered.
                 </p>
                 <div class="planet-overview-stats">
                     <div class="stat">
@@ -98,7 +97,7 @@
         <section class="newsletter">
             <!-- Looping Background-->
             <video autoplay muted loop class="newsletter-bg-fixed">
-                <source src="../assets/glowing_stars.mp4" type="video/mp4">
+                <source src="../assets/shooting_stars.mp4" type="video/mp4">
             </video>
 
             <!-- Newsletter Content -->
@@ -124,21 +123,22 @@
             <div class="footer-group"> 
                 <div class="footer-links">
                     <h1>Quick Links</h1>
-                    <a href="index.html">Home</a>
-                    <a href="pages/planets.html">Planets</a>
-                    <a href="pages/about.html">About</a>
-                    <a href="pages/contact.html">Contact Us</a>
+                    <a href="../index.html">Home</a>
+                    <a href="../pages/planets.html">Planets</a>
+                    <a href="../index.html">About</a>
+                    <a href="../index.html">Contact Us</a>
                 </div>
                 <div class="footer-links">
                     <h1>Social Media</h1>
-                    <a href="index.html">Facebook</a>
-                    <a href="index.html">Instagram</a>
-                    <a href="index.html">Tiktok</a>
+                    <a href="../index.html">Facebook</a>
+                    <a href="../index.html">Instagram</a>
+                    <a href="../index.html">Tiktok</a>
                 </div>
             </div>
         </section>
     </footer>
 
     <script src="../scripts/planets.js"></script>
+    </div>
 </body>
 </html>
